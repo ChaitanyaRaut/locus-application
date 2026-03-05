@@ -8,7 +8,7 @@ on:
 
 jobs:
   notify:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-self-micro
     permissions:
       contents: read
       pull-requests: read
