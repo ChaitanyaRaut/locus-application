@@ -1173,7 +1173,7 @@ function captureVisitor(name, email) {
   localStorage.setItem('locus_visitor', JSON.stringify(visitor));
   console.log('[factory.locus.sh] visitor:', visitor);
   // Send to Google Sheet via Apps Script web app
-  var GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/a/macros/locus.sh/s/AKfycbyireZHVkYo-IYB0_EJ5oG8YIeA2hZY13U2BSFrulLrdV2MbkFWmHMFdI0BsOFdSRjp/exec';
+  var GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/a/macros/locus.sh/s/AKfycbzJN2q6phCf94qT1fI4-luwJv41KOg0GVOY4s5UB5xYUbuc3jX0t7Ux9yaQO61o6ziV/exec';
   try {
     fetch(GOOGLE_SHEET_WEBHOOK_URL, {
       method: 'POST',
