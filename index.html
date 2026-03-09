@@ -346,17 +346,6 @@
 </style>
 </head>
 <body>
-<!--
-  You're reading the source. Good.
-  Most people never look here.
-
-  There are 3 ways in. None are listed.
-  One is a sequence every gamer knows.
-  One is a phrase hiding in plain sight — type it anywhere.
-  One requires you to verify what's already been verified.
-
-  If you found this, you're closer than 99% of visitors.
--->
 
 <!-- Visitor capture -->
 <div class="visitor-overlay" id="visitorOverlay">
@@ -969,12 +958,9 @@ function handleCommand(cmd) {
   } else if (trimmed === '/unlock' || trimmed === 'unlock') {
     line('<span class="d">  ...</span>');
     blank();
-    line('<span class="d">  Three doors. None are labeled.</span>');
-    line('<span class="d">  One opens with a sequence every gamer knows.</span>');
-    line('<span class="d">  One opens when you type what this page is named after.</span>');
-    line('<span class="d">  One opens when you verify what\'s already been verified.</span>');
+    line('<span class="d">  There are doors here. You won\'t find them by asking.</span>');
     blank();
-    line('<span class="d">  There is no /help for this.</span>');
+    line('<span class="d">  Curious people figure it out.</span>');
 
   } else {
     line('<span class="d">  command not found: ' + cmd.trim() + '</span>');
@@ -1006,56 +992,38 @@ if (terminalBody) {
 }
 
 // ════════════════════════════════════════════════════════════
-// EASTER EGGS (3 triggers, base64-encoded secrets)
 // ════════════════════════════════════════════════════════════
-
-// 1. Konami Code
-var konamiSeq = [38,38,40,40,37,39,37,39,66,65];
-var konamiIdx = 0;
+var _0x=[],_0i=0,_0b='',_0t=0,_0r=null,_0f=false;
+function _d(s,k){var r='';for(var i=0;i<s.length;i++)r+=String.fromCharCode(s.charCodeAt(i)^k.charCodeAt(i%k.length));return r;}
+var _k='factoryLocus';
+_0x=[38,38,40,40,37,39,37,39,66,65];
 document.addEventListener('keydown', function(e) {
   if (e.target.classList && e.target.classList.contains('terminal-input')) return;
-  if (e.keyCode === konamiSeq[konamiIdx]) {
-    konamiIdx++;
-    if (konamiIdx === konamiSeq.length) {
-      konamiIdx = 0;
-      triggerEasterEgg();
-    }
-  } else {
-    konamiIdx = 0;
-  }
+  if (e.keyCode === _0x[_0i]) {
+    _0i++;
+    if (_0i === _0x.length) { _0i = 0; _0g(); }
+  } else { _0i = 0; }
 });
-
-// 2. Hidden phrase (the answer is on the page — if you're paying attention)
-var secretBuf = '';
 document.addEventListener('keydown', function(e) {
-  if (e.key.length === 1) secretBuf += e.key.toLowerCase();
-  if (secretBuf.length > 30) secretBuf = secretBuf.slice(-30);
-  if (secretBuf.indexOf(atob('ZGV1cyBleCBtYWNoaW5h')) !== -1) {
-    secretBuf = '';
-    triggerEasterEgg();
+  if (e.key.length === 1) _0b += e.key.toLowerCase();
+  if (_0b.length > 30) _0b = _0b.slice(-30);
+  if (_0b.indexOf(_d('\x02\x04\x16\x07\x4f\x17\x01\x6c\x02\x02\x16\x1b\x0f\x0f\x02',_k)) !== -1) {
+    _0b = ''; _0g();
   }
 });
-
-// 3. Triple-click the "8/8 ownership" line — verify yourself
-var ownershipEl = document.getElementById('ownershipComplete');
-var tripleCount = 0;
-var tripleTimer = null;
-if (ownershipEl) {
-  ownershipEl.addEventListener('click', function() {
-    tripleCount++;
-    clearTimeout(tripleTimer);
-    tripleTimer = setTimeout(function() { tripleCount = 0; }, 600);
-    if (tripleCount >= 3) {
-      tripleCount = 0;
-      triggerEasterEgg();
-    }
+var _0el = document.getElementById('ownershipComplete');
+if (_0el) {
+  _0el.addEventListener('click', function() {
+    _0t++;
+    clearTimeout(_0r);
+    _0r = setTimeout(function() { _0t = 0; }, 600);
+    if (_0t >= 3) { _0t = 0; _0g(); }
   });
 }
 
-var eggTriggered = false;
-function triggerEasterEgg() {
-  if (eggTriggered) return;
-  eggTriggered = true;
+function _0g() {
+  if (_0f) return;
+  _0f = true;
 
   // Green flash
   var flash = document.createElement('div');
@@ -1066,7 +1034,7 @@ function triggerEasterEgg() {
 
   blank();
   divider();
-  prompt(atob('Li91bmxvY2stc2VjcmV0IC0tYWNjZXNzLWdyYW50ZWQ='));
+  prompt(_d('\x48\x14\x0d\x18\x00\x11\x12\x61\x1c\x06\x16\x01\x03\x15\x43\x59\x42\x13\x1a\x2f\x0a\x10\x06\x5e\x01\x13\x02\x1a\x1b\x17\x1d',_k));
   blank();
   line('<span class="g">  ACCESS GRANTED</span>');
   blank();
@@ -1078,8 +1046,8 @@ function triggerEasterEgg() {
   line('<span class="g">  │</span>  <span class="w">That\'s exactly who we hire.</span>                    <span class="g">│</span>', 'box-line');
   line('<span class="g">  │</span>                                                  <span class="g">│</span>', 'box-line');
   line('<span class="g">  │</span>  <span class="g">FAST-TRACK — email the founders directly:</span>     <span class="g">│</span>', 'box-line');
-  line('<span class="g">  │</span>  <span class="g">  ' + atob('dXRrYXJzaEBsb2N1cy5zaA==') + '</span>                        <span class="g">│</span>', 'box-line');
-  line('<span class="g">  │</span>  <span class="g">  ' + atob('cHJhZHlAbG9jdXMuc2g=') + '</span>                          <span class="g">│</span>', 'box-line');
+  line('<span class="g">  │</span>  <span class="g">  ' + _d('\x13\x15\x08\x15\x1d\x01\x11\x0c\x03\x0c\x16\x06\x15\x4f\x10\x1c',_k) + '</span>                        <span class="g">│</span>', 'box-line');
+  line('<span class="g">  │</span>  <span class="g">  ' + _d('\x16\x13\x02\x10\x16\x32\x15\x23\x0c\x16\x06\x5d\x15\x09',_k) + '</span>                          <span class="g">│</span>', 'box-line');
   line('<span class="g">  │</span>                                                  <span class="g">│</span>', 'box-line');
   line('<span class="g">  │</span>  <span class="w">Subject: FOUND IT | [Role] | [Your Name]</span>     <span class="g">│</span>', 'box-line');
   line('<span class="g">  │</span>                                                  <span class="g">│</span>', 'box-line');
@@ -1089,7 +1057,7 @@ function triggerEasterEgg() {
   line('<span class="g">  └──────────────────────────────────────────────────┘</span>', 'box-line');
   blank();
 
-  // Mobile-friendly fallback for easter egg (no box chars)
+  // Mobile fallback (no box chars)
   var mobileEgg = document.createElement('div');
   mobileEgg.className = 'box-divider';
   mobileEgg.style.display = 'none';
@@ -1099,8 +1067,8 @@ function triggerEasterEgg() {
     '<div class="line"><span class="w">  That\'s exactly who we hire.</span></div>',
     '<div class="line">&nbsp;</div>',
     '<div class="line"><span class="g">  FAST-TRACK — email the founders directly:</span></div>',
-    '<div class="line"><span class="g">  ' + atob('dXRrYXJzaEBsb2N1cy5zaA==') + '</span></div>',
-    '<div class="line"><span class="g">  ' + atob('cHJhZHlAbG9jdXMuc2g=') + '</span></div>',
+    '<div class="line"><span class="g">  ' + _d('\x13\x15\x08\x15\x1d\x01\x11\x0c\x03\x0c\x16\x06\x15\x4f\x10\x1c',_k) + '</span></div>',
+    '<div class="line"><span class="g">  ' + _d('\x16\x13\x02\x10\x16\x32\x15\x23\x0c\x16\x06\x5d\x15\x09',_k) + '</span></div>',
     '<div class="line">&nbsp;</div>',
     '<div class="line"><span class="w">  Subject: FOUND IT | [Role] | [Your Name]</span></div>',
     '<div class="line"><span class="d">  This skips the recruiter screen.</span></div>'
