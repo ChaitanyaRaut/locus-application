@@ -89,6 +89,24 @@
     border-bottom: 1px solid #1a1a1a;
   }
 
+  .subdept-header {
+    color: #d4d4d4;
+    font-weight: 700;
+    font-size: clamp(12px, 1.3vw, 13px);
+    margin-top: 14px;
+    margin-bottom: 2px;
+    padding-left: 12px;
+    border-left: 2px solid #00D173;
+  }
+
+  .subdept-desc {
+    color: #555;
+    font-size: clamp(11px, 1.1vw, 12px);
+    padding-left: 14px;
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+
   .job-row {
     display: flex;
     align-items: baseline;
@@ -268,22 +286,26 @@
 <script>
 var jobs = [
   { title: 'Senior Product Designer', dept: 'Design', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/uonWTrdRgTza/senior-product-designer' },
-  { title: 'DevOps Engineer - 3', dept: 'Engineering', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/GquK4nGtriTc/devops-engineer-3' },
-  { title: 'Director of Engineering', dept: 'Engineering', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/ixZHg1XsLP38/director-of-engineering' },
-  { title: 'Director of Engineering Solutions', dept: 'Engineering', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/CY1G9Cko9YPx/director-of-engineering-solutions' },
-  { title: 'Engineering Manager', dept: 'Engineering', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/EyUqQiTkzMSr/engineering-manager' },
-  { title: 'Integration Engineering Consultant', dept: 'Engineering', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/BBYVDWBIOSYk/integration-engineering-consultant' },
-  { title: 'Integration Lead – Middleware & Enterprise', dept: 'Engineering', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/6UE_GhhLY84S/integration-lead-middleware-enterprise-integrations' },
-  { title: 'Principal Engineer', dept: 'Engineering', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/J13CVs77APot/principal-engineer' },
-  { title: 'SDE-2 Android', dept: 'Engineering', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/FufccDdAtt58/sde-2-android' },
-  { title: 'SDE-2 iOS', dept: 'Engineering', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/9czHPpP8DjlU/sde-2-ios' },
-  { title: 'Software Developer II (Fullstack)', dept: 'Engineering', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/tWRGEurfrz1a/software-developer-ii-fullstack' },
-  { title: 'Software Developer III (Fullstack)', dept: 'Engineering', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/_refw-le759W/software-developer-iii-fullstack' },
-  { title: 'Software Development Engineer - 3', dept: 'Engineering', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/QBdFZljpx03q/software-development-engineer-3' },
-  { title: 'Software Development Engineer 2', dept: 'Engineering', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/pZZoceeKd4Ta/software-development-engineer-2' },
-  { title: 'Software Development Engineer – 3 (Frontend)', dept: 'Engineering', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/iMdP88xfe7T5/software-development-engineer-3-frontend' },
-  { title: 'Staff DevOps Engineer', dept: 'Engineering', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/LUcSZzH2whV9/staff-devops-engineer' },
-  { title: 'Staff Engineer', dept: 'Engineering', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/drDcXaKEhOp6/staff-engineer' },
+  // Engineering — Forward Deploy Engineers
+  { title: 'Director of Engineering Solutions', dept: 'Engineering', subdept: 'Forward Deploy Engineers', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/CY1G9Cko9YPx/director-of-engineering-solutions' },
+  { title: 'Integration Engineering Consultant', dept: 'Engineering', subdept: 'Forward Deploy Engineers', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/BBYVDWBIOSYk/integration-engineering-consultant' },
+  { title: 'Integration Lead – Middleware & Enterprise', dept: 'Engineering', subdept: 'Forward Deploy Engineers', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/6UE_GhhLY84S/integration-lead-middleware-enterprise-integrations' },
+  { title: 'Software Developer II (Fullstack)', dept: 'Engineering', subdept: 'Forward Deploy Engineers', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/tWRGEurfrz1a/software-developer-ii-fullstack' },
+  { title: 'Software Developer III (Fullstack)', dept: 'Engineering', subdept: 'Forward Deploy Engineers', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/_refw-le759W/software-developer-iii-fullstack' },
+  // Engineering — Full Stack Builders & Agent Managers
+  { title: 'Director of Engineering', dept: 'Engineering', subdept: 'Full Stack Builders & Agent Managers', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/ixZHg1XsLP38/director-of-engineering' },
+  { title: 'Engineering Manager', dept: 'Engineering', subdept: 'Full Stack Builders & Agent Managers', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/EyUqQiTkzMSr/engineering-manager' },
+  { title: 'Principal Engineer', dept: 'Engineering', subdept: 'Full Stack Builders & Agent Managers', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/J13CVs77APot/principal-engineer' },
+  { title: 'Staff Engineer', dept: 'Engineering', subdept: 'Full Stack Builders & Agent Managers', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/drDcXaKEhOp6/staff-engineer' },
+  { title: 'Software Development Engineer - 3', dept: 'Engineering', subdept: 'Full Stack Builders & Agent Managers', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/QBdFZljpx03q/software-development-engineer-3' },
+  { title: 'Software Development Engineer – 3 (Frontend)', dept: 'Engineering', subdept: 'Full Stack Builders & Agent Managers', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/iMdP88xfe7T5/software-development-engineer-3-frontend' },
+  { title: 'Software Development Engineer 2', dept: 'Engineering', subdept: 'Full Stack Builders & Agent Managers', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/pZZoceeKd4Ta/software-development-engineer-2' },
+  { title: 'SDE-2 Android', dept: 'Engineering', subdept: 'Full Stack Builders & Agent Managers', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/FufccDdAtt58/sde-2-android' },
+  { title: 'SDE-2 iOS', dept: 'Engineering', subdept: 'Full Stack Builders & Agent Managers', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/9czHPpP8DjlU/sde-2-ios' },
+  // Engineering — Agent Builders
+  { title: 'Staff DevOps Engineer', dept: 'Engineering', subdept: 'Agent Builders', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/LUcSZzH2whV9/staff-devops-engineer' },
+  { title: 'DevOps Engineer - 3', dept: 'Engineering', subdept: 'Agent Builders', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/GquK4nGtriTc/devops-engineer-3' },
+  // Non-Engineering
   { title: 'Finance Manager', dept: 'Finance', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/J5nAZ49DU1T_/finance-manager' },
   { title: 'Talent Acquisition Partner', dept: 'HR', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/Ijue-l_SlW50/talent-acquisition-partner' },
   { title: 'Director of Product Marketing', dept: 'Marketing', loc: 'United States', url: 'https://locus.freshteam.com/jobs/vfiMEmxGc6r9/director-of-product-marketing' },
@@ -297,6 +319,13 @@ var jobs = [
   { title: 'Customer Success Manager', dept: 'Customer Success', loc: 'Bengaluru', url: 'https://locus.freshteam.com/jobs/CucxSZYRScRU/customer-success-manager' },
   { title: 'Enterprise Program Manager', dept: 'Solutions', loc: 'United States', url: 'https://locus.freshteam.com/jobs/lxwU2gLKzOH9/enterprise-program-manager-technical-operational' }
 ];
+
+// Engineering sub-department descriptions
+var subdeptDescriptions = {
+  'Forward Deploy Engineers': 'The bridge between cutting-edge technology and real-world impact — embedding directly with clients to build, integrate, and deliver solutions that work in the field.',
+  'Full Stack Builders & Agent Managers': 'Senior engineers and technical leaders who architect, build, and manage next-generation software and AI agent systems — delivering excellence from code to production.',
+  'Agent Builders': 'Infrastructure engineers who build and operate the platforms, pipelines, and autonomous systems that power Locus at scale.'
+};
 
 var searchInput = document.getElementById('searchInput');
 var jobList = document.getElementById('jobList');
@@ -333,7 +362,7 @@ function render() {
   noResults.style.display = 'none';
   summary.textContent = filtered.length + ' role' + (filtered.length !== 1 ? 's' : '') + ' found';
 
-  // Group by department
+  // Group by department, then by subdept for Engineering
   var depts = {};
   for (var i = 0; i < filtered.length; i++) {
     var j = filtered[i];
@@ -341,7 +370,13 @@ function render() {
     depts[j.dept].push(j);
   }
 
-  var deptOrder = Object.keys(depts).sort();
+  // Render Engineering first, then others alphabetically
+  var deptOrder = Object.keys(depts).sort(function(a, b) {
+    if (a === 'Engineering') return -1;
+    if (b === 'Engineering') return 1;
+    return a.localeCompare(b);
+  });
+
   for (var d = 0; d < deptOrder.length; d++) {
     var dept = deptOrder[d];
     var header = document.createElement('div');
@@ -349,15 +384,72 @@ function render() {
     header.textContent = dept + ' (' + depts[dept].length + ')';
     jobList.appendChild(header);
 
-    for (var k = 0; k < depts[dept].length; k++) {
-      var job = depts[dept][k];
-      var row = document.createElement('div');
-      row.className = 'job-row';
-      row.innerHTML =
-        '<div class="job-title"><a href="' + job.url + '" target="_blank">' + job.title + '</a></div>' +
-        '<div class="job-loc">' + job.loc + '</div>' +
-        '<div class="job-apply"><a href="' + job.url + '" target="_blank">Apply →</a></div>';
-      jobList.appendChild(row);
+    if (dept === 'Engineering') {
+      // Group Engineering roles by subdept
+      var subdepts = {};
+      var noSubdept = [];
+      for (var s = 0; s < depts[dept].length; s++) {
+        var ej = depts[dept][s];
+        if (ej.subdept) {
+          if (!subdepts[ej.subdept]) subdepts[ej.subdept] = [];
+          subdepts[ej.subdept].push(ej);
+        } else {
+          noSubdept.push(ej);
+        }
+      }
+
+      // Render sub-departments in defined order
+      var subdeptOrder = ['Forward Deploy Engineers', 'Full Stack Builders & Agent Managers', 'Agent Builders'];
+      for (var si = 0; si < subdeptOrder.length; si++) {
+        var sd = subdeptOrder[si];
+        if (!subdepts[sd]) continue;
+
+        var subHeader = document.createElement('div');
+        subHeader.className = 'subdept-header';
+        subHeader.textContent = sd + ' (' + subdepts[sd].length + ')';
+        jobList.appendChild(subHeader);
+
+        if (subdeptDescriptions[sd]) {
+          var desc = document.createElement('div');
+          desc.className = 'subdept-desc';
+          desc.textContent = subdeptDescriptions[sd];
+          jobList.appendChild(desc);
+        }
+
+        for (var sk = 0; sk < subdepts[sd].length; sk++) {
+          var sJob = subdepts[sd][sk];
+          var sRow = document.createElement('div');
+          sRow.className = 'job-row';
+          sRow.innerHTML =
+            '<div class="job-title"><a href="' + sJob.url + '" target="_blank">' + sJob.title + '</a></div>' +
+            '<div class="job-loc">' + sJob.loc + '</div>' +
+            '<div class="job-apply"><a href="' + sJob.url + '" target="_blank">Apply →</a></div>';
+          jobList.appendChild(sRow);
+        }
+      }
+
+      // Render uncategorized engineering roles
+      for (var u = 0; u < noSubdept.length; u++) {
+        var uJob = noSubdept[u];
+        var uRow = document.createElement('div');
+        uRow.className = 'job-row';
+        uRow.innerHTML =
+          '<div class="job-title"><a href="' + uJob.url + '" target="_blank">' + uJob.title + '</a></div>' +
+          '<div class="job-loc">' + uJob.loc + '</div>' +
+          '<div class="job-apply"><a href="' + uJob.url + '" target="_blank">Apply →</a></div>';
+        jobList.appendChild(uRow);
+      }
+    } else {
+      for (var k = 0; k < depts[dept].length; k++) {
+        var job = depts[dept][k];
+        var row = document.createElement('div');
+        row.className = 'job-row';
+        row.innerHTML =
+          '<div class="job-title"><a href="' + job.url + '" target="_blank">' + job.title + '</a></div>' +
+          '<div class="job-loc">' + job.loc + '</div>' +
+          '<div class="job-apply"><a href="' + job.url + '" target="_blank">Apply →</a></div>';
+        jobList.appendChild(row);
+      }
     }
   }
 }
